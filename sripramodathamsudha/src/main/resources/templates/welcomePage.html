@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title th:utext="${title}"></title>
+      <link rel="stylesheet" type="text/css" media="all" 
+          href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+          <script src="js/jquery-3.2.1.slim.min.js"></script>
+   </head>
+    
+   <body>
+    
+      <!-- Include _menu.html -->
+      <th:block th:include="/_menu"></th:block>  
+       
+      <h2>Welcome to Sri Pramodatma Sudha</h2>
+      <img id="mainImg" class="img-responsive img-circle" src="img/pms.jpg"/>
+       
+   </body>
+</html>

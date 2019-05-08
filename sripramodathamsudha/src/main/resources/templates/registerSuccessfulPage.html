@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Successfully registered</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" media="all" href="css/main.css"
+	th:href="@{css/main.css}" />
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style>
+th, td {
+	padding: 5px;
+}
+
+ul {
+	list-style: none;
+	background-image: none;
+	background-position: 0;
+	padding-inline-start: 13px;
+}
+
+td span {
+	font-size: 90%;
+	font-style: italic;
+	color: red;
+}
+
+.error {
+	color: red;
+	font-style: italic;
+}
+</style>
+</head>
+<body>
+
+	<!-- Include _menu.html -->
+	<th:block th:include="/_menu"></th:block>
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h2 style="text-align: center;">You have successfully
+					registered a new user!</h2>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row" id="center-row" style="b: center;">
+			<div class="col">
+				<div class="row">
+					<div class="col embed-responsive align-content-center"
+						style="position: absolute;">
+						<img src="/img/pramodatma.jpg" alt-text="Magzine Backpage"
+							style="width: 50%;" class="rounded mx-auto d-block"> 
+						<div class="card text-left" id="CardLabel">
+						<a
+							href="javascript:printLabel()" class="btn btn-success btn-lg"
+							style="border-radius: 1.3rem !important; width: 32%; margin-top: 81px; margin-left: -147px; transform: rotate(-20deg);">
+							<span class="glyphicon glyphicon-print"></span> Print
+						</a>
+							<div id="label" class="card-body" th:if="${flashUser != null}" style="margin-top: -125px;">
+								<ul>
+									<li><span th:utext="${flashUser.firstName}">..</span>&nbsp<span
+										th:utext="${flashUser.lastName}">..</span></li>
+									<li><span th:utext="${flashUser.address}">..</span></li>
+									<li><span th:utext="${flashUser.cityName}">..</span>&nbsp<span
+										th:utext="${flashUser.inputZip}">..</span></li>
+									<li><span th:utext="${flashUser.mobileNo}">..</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+#printDiv{
+	width:49%;
+	height:100%;
+}
+
+#CardLabel{
+    width: 315px;
+    height: 173px;
+    margin-top: -500px;
+    margin-left: 400px;
+    position: absolute;
+}
+

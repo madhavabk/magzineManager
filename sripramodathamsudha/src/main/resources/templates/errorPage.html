@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:utext="${title}"></title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+</head>
+
+<style>
+table th, table td {
+	padding: 5px;
+}
+
+.message {
+	color: blue;
+}
+</style>
+
+<body>
+
+	<!-- Include _menu.html -->
+	<th:block th:include="/_menu"></th:block>
+	<div th:each="error : ${errors}">
+		<p th:utext="${error.toString()}"/>
+	</div>
+</body>
+</html>
