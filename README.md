@@ -10,6 +10,16 @@ Following are the basic needs that are required for such kind of products:
 6. Optimize search to find by any of the fields as easily as possible. For example search by subscription period, street name, pin code, lastname, part of the name, mobile number, and many more such search options
 7. Display given subscriber on the sample magzine last page where it will be really printed to give a feel of real magzine of the subscriber.
 
+# Installation instructions from source code
+1. git clone / download zip
+2. goto main folder where you find pom file
+3. mvn install
+4. locate war file in the target folder and deploy it into tomcat server
+
+# Installation instructions from war
+1. Download the release version war rile
+2. Deploy the war file in tomcat
+3. Access the webapplication to try the features
 
 # Following are the examples of the usage:
 
