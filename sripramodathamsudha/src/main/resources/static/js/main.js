@@ -1,9 +1,7 @@
 function printLabel() {
 	//var prtContent = document.getElementById("printDiv");
 	var prtContent = document.getElementById("label");
-	var WinPrint = window
-			.open('', 'Print Lables',
-					'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+	var WinPrint = window.open('', 'Print Lables','left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
 	WinPrint.document.write('<html><head><title>Print Label</title>');
 	WinPrint.document.write('<style>');
 	WinPrint.document.write('#printDiv{width:2.625in;height:1in;color:blue;margin: 0mm;}');
