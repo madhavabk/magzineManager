@@ -29,16 +29,16 @@ public class AppUserValidator implements Validator {
         AppUserForm appUserForm = (AppUserForm) target;
  
         // Check the fields of AppUserForm.
-        //ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "NotEmpty.appUserForm.firstName");
-        //ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "NotEmpty.appUserForm.lastName");
-        //ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "NotEmpty.appUserForm.email");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "NotEmpty.appUserForm.firstName");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "NotEmpty.appUserForm.lastName");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "mobileNo", "NotEmpty.appUserForm.mobileNo");
         //ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty.appUserForm.password");
         //ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword", "NotEmpty.appUserForm.confirmPassword");
         //ValidationUtils.rejectIfEmptyOrWhitespace(errors, "gender", "NotEmpty.appUserForm.gender");
-        //ValidationUtils.rejectIfEmptyOrWhitespace(errors, "countryCode", "NotEmpty.appUserForm.countryCode");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "inputZip", "NotEmpty.appUserForm.inputZip");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "stateCode", "NotEmpty.appUserForm.stateCode");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cityCode", "NotEmpty.appUserForm.cityCode");
-        ValidationUtils.rejectIfEmpty(errors, "mobileNo", "NotEmpty.appUserForm.mobileNo");
+        //ValidationUtils.rejectIfEmpty(errors, "mobileNo", "NotEmpty.appUserForm.mobileNo");
         
         //Adding minimum validations to ensure that user does not exist already.
        

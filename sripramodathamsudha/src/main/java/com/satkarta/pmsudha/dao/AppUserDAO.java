@@ -4,6 +4,9 @@ package com.satkarta.pmsudha.dao;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URI;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
@@ -123,7 +126,13 @@ public class AppUserDAO {
  
         USERS_MAP.put(userid, user);
         
-        File file = new File("d:\\members.csv");
+        //File file = new File("WEB-INF/classes/members.csv");
+        File file = null;
+        try {
+	        file = getFileFromResource("members.csv");
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
         // Create a File and append if it already exists.
         Writer writer = new FileWriter(file, true);
         //Reader reader = new FileReader(file);
@@ -142,6 +151,16 @@ public class AppUserDAO {
         return user;
     }
  
+    private File getFileFromResource(String fileName) throws URISyntaxException {
+	    ClassLoader classLoader = getClass().getClassLoader();
+        URL resource = classLoader.getResource(fileName);
+        if (resource == null) {
+            throw new IllegalArgumentException("file not found! " + fileName);
+        } else {
+            return new File(resource.toURI());
+        }
+
+    }
   
     public static  void csvWriter(String userid, AppUser user, Writer writer) throws IOException {
     	
@@ -161,8 +180,15 @@ public class AppUserDAO {
 
     }
     
-    public static List csvReader() throws IOException {
-    	File file = new File("d:\\\\members.csv");
+    public List csvReader() throws IOException {
+    	//File file = new File("WEB-INF/classes/members.csv");
+	    File file = null;
+        try {
+	        file = getFileFromResource("members.csv");
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
         //Reader reader = new FileReader(file);
         
     	MappingIterator<AppUser> personIter = new CsvMapper().readerWithTypedSchemaFor(AppUser.class).readValues(file);
